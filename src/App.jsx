@@ -24,6 +24,8 @@ import Counter from "./class-components/Counter";
 import Mounting from "./class-components/life-cycle-Methods/mounting";
 import Update from "./class-components/life-cycle-Methods/Update";
 import UnMounting from "./class-components/life-cycle-Methods/UnMounting";
+import ButtonUnMount from "./class-components/life-cycle-Methods/ButtonUnMount";
+import Timer from "./class-components/life-cycle-Methods/Timer";
 
 export default class App extends Component {
   render() {
@@ -34,7 +36,9 @@ export default class App extends Component {
         {/* <Counter /> */}
         {/* <Mounting /> */}
         {/* <Update/> */}
-<UnMounting/>
+{/* <UnMounting/> */}
+{/* <ButtonUnMount/> */}
+<Timer/>
       </div>
     );
   }
