@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// //import Welcome from "./embeding-expression/welcome";
+// // import './App.css';
+// // import Conditional from './embeding-expression/Conditional';
+// // import CallingFunction from './embeding-expression/CallingFunction';
+// import RenderingList from "./embeding-expression/RenderingList";
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   return (
+//     <>
+//       {/* <Welcome /> */}
+//       {/* <CallingFunction/> */}
+//       {/* <Conditional/> */}
+//       <RenderingList/>
+//     </>
+//   );
+// }
 
-  return (
-    <>
+// export default App;
+
+import React, { Component } from "react";
+import Basics from "./class-components/Basics";
+import UsingProps from "./class-components/UsingProps";
+import Counter from "./class-components/Counter";
+import Mounting from "./class-components/life-cycle-Methods/mounting";
+import Update from "./class-components/life-cycle-Methods/Update";
+import UnMounting from "./class-components/life-cycle-Methods/UnMounting";
+
+export default class App extends Component {
+  render() {
+    return (
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* <Basics/> */}
+        {/* <UsingProps name='afdel'/> */}
+        {/* <Counter /> */}
+        {/* <Mounting /> */}
+        {/* <Update/> */}
+<UnMounting/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
+  }
 }
-
-export default App
