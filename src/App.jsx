@@ -2,10 +2,13 @@
 // import './App.css';
 // import Conditional from './embeding-expression/Conditional';
 // import CallingFunction from './embeding-expression/CallingFunction';
-import RenderingList from "./embeding-expression/RenderingList";
-import Basics from "./functional-components/Basics";
-import Props from "./functional-components/Props";
-import State from "./functional-components/state";
+// import RenderingList from "./embeding-expression/RenderingList";
+// import Basics from "./functional-components/Basics";
+// import Props from "./functional-components/Props";
+// import State from "./functional-components/state";
+
+import Timer from "./3.functional-components/hooks/useEffect-hook/Timer";
+import UserList from "./3.functional-components/hooks/useEffect-hook/UserList";
 
 function App() {
   return (
@@ -16,7 +19,10 @@ function App() {
       {/* <RenderingList/> */}
       {/* <Basics/> */}
       {/* <State /> */}
-    <Props/>
+      {/* <Props/> */}
+      {/* hooks and life cycle methode */}
+      {/* <Timer/> */}
+      <UserList />
     </>
   );
 }
