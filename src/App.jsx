@@ -7,22 +7,27 @@
 // import Props from "./functional-components/Props";
 // import State from "./functional-components/state";
 
+import React from "react";
+import SimpleForm from "./form/SimpleForm";
+
 // import Home from "./3.functional-components/hooks/useContext-hook/dark&light-mode/Home";
-import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
-import Navbar from "./nested-Routing/NavBar";
-import { UserApiProvider } from "./3.functional-components/hooks/useContext-hook/userList/UserApiContext";
-import UserLIst from "./3.functional-components/hooks/useContext-hook/userList/UserLIst";
+// import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
+// import Navbar from "./nested-Routing/NavBar";
+// import { UserApiProvider } from "./3.functional-components/hooks/useContext-hook/userList/UserApiContext";
+// import UserLIst from "./3.functional-components/hooks/useContext-hook/userList/UserLIst";
 // import Timer from "./3.functional-components/hooks/useEffect-hook/Timer";
 // import UserList from "./3.functional-components/hooks/useEffect-hook/UserList";
 // import TextInput from "./3.functional-components/hooks/useState/textInput";
 // import Toggle from "./3.functional-components/hooks/useState/Toggle";
-import Home from "./nested-Routing/Home";
-import About from "./nested-Routing/About";
-import Service from "./nested-Routing/Service";
-import { Route, Routes } from "react-router-dom";
-import WebDev from "./nested-Routing/services/WebDev";
-import AppDev from "./nested-Routing/services/AppDev";
-import Design from "./nested-Routing/services/Design";
+// import Home from "./nested-Routing/Home";
+// import About from "./nested-Routing/About";
+// import Service from "./nested-Routing/Service";
+// import { Route, Routes } from "react-router-dom";
+// import WebDev from "./nested-Routing/services/WebDev";
+// import AppDev from "./nested-Routing/services/AppDev";
+// import Design from "./nested-Routing/services/Design";
+// import Items from "./react-keys/items";
+// import RealWorld from "./react-keys/RealWorld";
 function App() {
   return (
     <>
@@ -45,19 +50,25 @@ function App() {
       {/* <UserApiProvider>
         <UserLIst/>
       </UserApiProvider> */}
-      <Navbar />
-      <div className="container-app">
+      {/* ---------------------------navbar------------------------------ */}
+      {/* <Navbar /> */}
+      {/* <div className="container-app">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          {/* nested route */}
-          <Route path="/service" element={<Service />}>
+          <Route path="/about" element={<About />} /> */}
+      {/* nested route */}
+      {/* <Route path="/service" element={<Service />}>
             <Route path="web-development" element={<WebDev />} />
             <Route path="app-development" element={<AppDev />} />
             <Route path="design" element={<Design />} />
-          </Route>
-        </Routes>
-      </div>
+          </Route> */}
+      {/* </Routes> */}
+      {/* </div> */}
+      {/* -----------------------react key---------------------------- */}
+      {/* <Items/> */}
+      {/* <RealWorld/> */}
+
+      <SimpleForm />
     </>
   );
 }

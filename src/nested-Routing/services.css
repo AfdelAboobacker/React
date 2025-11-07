@@ -23,6 +23,7 @@
 }
 
 .service-link {
+  margin-right: 5px;
   padding: 0.5rem 0.75rem; 
   color: white;
   border-radius: 0.5rem;
