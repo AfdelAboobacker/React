@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "image": "../images/f1.jpg",
+    "name": "Abstract Floral Shirt"
+  },
+  {
+    "id": 2,
+    "image": "../images/f2.jpg",
+    "name": "Tropical Lily Shirt"
+  },
+  {
+    "id": 3,
+    "image": "../images/n1.jpg",
+    "name": "Light Blue Mandarin Collar Shirt"
+  },
+  {
+    "id": 4,
+    "image": "../images/n2.jpg",
+    "name": "Checked Navy Shirt"
+  },
+  {
+    "id": 5,
+    "image": "../images/n6.jpg",
+    "name": "Striped Grey Shorts"
+  }
+]

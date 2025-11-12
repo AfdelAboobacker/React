@@ -9,6 +9,8 @@
 
 import React from "react";
 import SimpleForm from "./form/SimpleForm";
+import Form from "./form/Form";
+import Crud from "./local_storage/Crud";
 
 // import Home from "./3.functional-components/hooks/useContext-hook/dark&light-mode/Home";
 // import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
@@ -68,7 +70,9 @@ function App() {
       {/* <Items/> */}
       {/* <RealWorld/> */}
 
-      <SimpleForm />
+      {/* <SimpleForm /> */}
+      {/* <Form/> */}
+      <Crud/>
     </>
   );
 }
