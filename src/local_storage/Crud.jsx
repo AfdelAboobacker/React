@@ -1,5 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import "./crud.css";
+import { BsDisplay } from "react-icons/bs";
 const Crud = () => {
   const [formData, setFormData] = useState({
     id: "",
@@ -14,18 +15,17 @@ const Crud = () => {
 
   // load users from loacalStorage
   useEffect(() => {
-    const stored = localStorage.retItem("users");
+    const stored = localStorage.getItem("users");
     if (stored) {
       try {
         const parsedUser = JSON.parse(stored); //
-        setUsers(parsedUser)
+        setUsers(parsedUser);
       } catch (error) {
-        console.error('Error parsing data',error);
-        localStorage.removeItem('users');//clear corrupted data
-
+        console.error("Error parsing data", error);
+        localStorage.removeItem("users"); //clear corrupted data
       }
     }
-    setLoading(true);//mark as load
+    setLoading(true); //mark as load
   }, []);
 
   // save users to localStorage
@@ -63,19 +63,42 @@ const Crud = () => {
   //form Submission
 
   const handleSubmit = (e) => {
-    e.preventDefualt();
+    e.preventDefault();
     const validationError = validate();
 
     if (Object.keys(validationError).length > 0) {
       setError(validationError);
       return;
     }
+
+    if (editMode) {
+      setUsers(
+        users.map((user) => (user.id === formData.id ? formData : user))
+      );
+      setEditMode(false);
+    } else {
+      const newUsers = { ...formData, id: Date.now().toString() };
+      setUsers([...users, newUsers]);
+    }
+    setFormData({
+      id: "",
+      name: "",
+      email: "",
+      age: "",
+    });
+
+    setError({});
   };
 
+
+const handleEdit=(us)=>{
+  setFormData(us);
+  setEditMode(false);
+}
   return (
     <div className="formnew">
       <h1>React CRUD-Simple Form</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         {/* name */}
         <div>
           <input
@@ -85,6 +108,7 @@ const Crud = () => {
             onChange={handleChange}
             placeholder="your name"
           />
+          {error && <p style={{ color: "red" }}>{error.name}</p>}
         </div>
         {/* email */}
         <div>
@@ -95,6 +119,7 @@ const Crud = () => {
             onChange={handleChange}
             placeholder="email"
           />
+          {error && <p style={{ color: "red" }}>{error.email}</p>}
         </div>
         {/* age */}
         <div>
@@ -105,9 +130,52 @@ const Crud = () => {
             onChange={handleChange}
             placeholder="age"
           />
+          {error && <p style={{ color: "red" }}>{error.age}</p>}
         </div>
-        <button type="submit">{editMode? 'update users' : 'add users'}</button>
+        <button type="submit">{editMode ? "update users" : "add users"}</button>
+        {editMode && (
+          <button type="button"></button>
+        )}
       </form>
+      <hr />
+      <div
+        style={{
+          Display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "10px",
+        }}
+      >
+        <h2>Users list</h2>
+        {/* clear data button */}
+      </div>
+      {users.length > 0 ? (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>age</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((us) => (
+              <tr key={us.id}>
+                <td>{us.name}</td>
+                <td>{us.email}</td>
+                <td>{us.age}</td>
+                <td>
+                  <button onClick={()=>handleEdit(us)}>Edit</button>
+                  <button style={{ marginLeft: "10px" }}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>no users added yet</p>
+      )}
     </div>
   );
 };
