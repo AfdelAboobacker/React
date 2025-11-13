@@ -90,11 +90,33 @@ const Crud = () => {
     setError({});
   };
 
+  const handleEdit = (us) => {
+    setFormData(us);
+    setEditMode(true);
+  };
 
-const handleEdit=(us)=>{
-  setFormData(us);
-  setEditMode(false);
-}
+  const hanndleCancel = () => {
+    setFormData({ id: "", name: "", email: "", age: "" });
+    setEditMode(false);
+    setError({});
+  };
+
+  const handleDelete = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
+  };
+
+  const handleClearAll=()=>{
+    if(window.confirm("Are you sure you want clear all data ?this action cannot be undone.")){
+      setUsers([]);
+      localStorage.removeItem("users");
+      //also clear the form is in edit mode
+      if(editMode){
+        setFormData({id:'',name:'',age:'',email:''});
+        setEditMode(false);
+        setError({});
+      } 
+    } 
+  }
   return (
     <div className="formnew">
       <h1>React CRUD-Simple Form</h1>
@@ -134,7 +156,13 @@ const handleEdit=(us)=>{
         </div>
         <button type="submit">{editMode ? "update users" : "add users"}</button>
         {editMode && (
-          <button type="button"></button>
+          <button
+            type="button"
+            onClick={hanndleCancel}
+            style={{ marginLeft: "10px" }}
+          >
+            Cancel
+          </button>
         )}
       </form>
       <hr />
@@ -148,6 +176,21 @@ const handleEdit=(us)=>{
       >
         <h2>Users list</h2>
         {/* clear data button */}
+        {users.length > 0 && (
+          <button onClick={handleClearAll}
+            style={{
+              backgroundColor: "#dc345",
+              color: "white",
+              border: "none",
+              padding: "8px 12px",
+              borderRadius: "4px",
+              cursor: "pointer",
+              marginLeft: "30px",
+            }}
+          >
+            Clear all data
+          </button>
+        )}
       </div>
       {users.length > 0 ? (
         <table>
@@ -166,8 +209,13 @@ const handleEdit=(us)=>{
                 <td>{us.email}</td>
                 <td>{us.age}</td>
                 <td>
-                  <button onClick={()=>handleEdit(us)}>Edit</button>
-                  <button style={{ marginLeft: "10px" }}>Delete</button>
+                  <button onClick={() => handleEdit(us)}>Edit</button>
+                  <button
+                    onClick={() => handleDelete(us.id)}
+                    style={{ marginLeft: "10px" }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
