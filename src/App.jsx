@@ -11,6 +11,9 @@ import React from "react";
 import SimpleForm from "./form/SimpleForm";
 import Form from "./form/Form";
 import Crud from "./local_storage/Crud";
+import { Axios } from "axios";
+import AxiosGet from "./Axios/AxiosGet";
+import AxiosPost from "./Axios/AxiosPost";
 
 // import Home from "./3.functional-components/hooks/useContext-hook/dark&light-mode/Home";
 // import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
@@ -72,7 +75,10 @@ function App() {
 
       {/* <SimpleForm /> */}
       {/* <Form/> */}
-      <Crud/>
+      {/* local storage------------------ */}
+      {/* <Crud/> */}
+      {/* <AxiosGet/> */}
+<AxiosPost/>
     </>
   );
 }
