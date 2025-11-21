@@ -14,6 +14,7 @@ import Crud from "./local_storage/Crud";
 import { Axios } from "axios";
 import AxiosGet from "./Axios/AxiosGet";
 import AxiosPost from "./Axios/AxiosPost";
+import Player from "./3.functional-components/hooks/useRef/Player";
 
 // import Home from "./3.functional-components/hooks/useContext-hook/dark&light-mode/Home";
 // import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
@@ -78,7 +79,8 @@ function App() {
       {/* local storage------------------ */}
       {/* <Crud/> */}
       {/* <AxiosGet/> */}
-<AxiosPost/>
+{/* <AxiosPost/> */}
+<Player/>
     </>
   );
 }
