@@ -15,6 +15,9 @@ import { Axios } from "axios";
 import AxiosGet from "./Axios/AxiosGet";
 import AxiosPost from "./Axios/AxiosPost";
 import Player from "./3.functional-components/hooks/useRef/Player";
+import UseLayoutEffect from "./3.functional-components/hooks/useLayoutEffect/useLayoutEffect";
+import Counter from "./3.functional-components/hooks/useReducer/Counter";
+import UseMemo from "./3.functional-components/hooks/UseMemo";
 
 // import Home from "./3.functional-components/hooks/useContext-hook/dark&light-mode/Home";
 // import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
@@ -80,7 +83,10 @@ function App() {
       {/* <Crud/> */}
       {/* <AxiosGet/> */}
 {/* <AxiosPost/> */}
-<Player/>
+{/* <Player/> */}
+{/* <UseLayoutEffect/> */}
+  {/* <Counter/> */}
+  <UseMemo/>
     </>
   );
 }
