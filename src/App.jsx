@@ -18,6 +18,9 @@ import Player from "./3.functional-components/hooks/useRef/Player";
 import UseLayoutEffect from "./3.functional-components/hooks/useLayoutEffect/useLayoutEffect";
 import Counter from "./3.functional-components/hooks/useReducer/Counter";
 import UseMemo from "./3.functional-components/hooks/UseMemo";
+import ProductPage from "./Design/dynamic-routing-RW-eg/ProductPage";
+import { Route, Routes } from "react-router-dom";
+import ProductDetails from "./Design/dynamic-routing-RW-eg/ProductDetails";
 
 // import Home from "./3.functional-components/hooks/useContext-hook/dark&light-mode/Home";
 // import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
@@ -82,11 +85,16 @@ function App() {
       {/* local storage------------------ */}
       {/* <Crud/> */}
       {/* <AxiosGet/> */}
-{/* <AxiosPost/> */}
-{/* <Player/> */}
-{/* <UseLayoutEffect/> */}
-  {/* <Counter/> */}
-  <UseMemo/>
+      {/* <AxiosPost/> */}
+      {/* <Player/> */}
+      {/* <UseLayoutEffect/> */}
+      {/* <Counter/> */}
+      {/* <UseMemo/> */}
+      {/* <ProductPage /> */}
+      <Routes>
+        <Route path="/" element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+      </Routes>
     </>
   );
 }
