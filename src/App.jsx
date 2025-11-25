@@ -21,6 +21,7 @@ import UseMemo from "./3.functional-components/hooks/UseMemo";
 import ProductPage from "./Design/dynamic-routing-RW-eg/ProductPage";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./Design/dynamic-routing-RW-eg/ProductDetails";
+import BasicHookForm from "./react-hook-form/BasicHookForm";
 
 // import Home from "./3.functional-components/hooks/useContext-hook/dark&light-mode/Home";
 // import { ThemeProvider } from "./3.functional-components/hooks/useContext-hook/dark&light-mode/ThemeContext";
@@ -91,10 +92,11 @@ function App() {
       {/* <Counter/> */}
       {/* <UseMemo/> */}
       {/* <ProductPage /> */}
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<ProductPage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-      </Routes>
+      </Routes> */}
+ <BasicHookForm/>
     </>
   );
 }
